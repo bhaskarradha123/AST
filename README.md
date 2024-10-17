@@ -61,3 +61,44 @@ AND (salary > 20000 OR experience > 5)
    mvn exec:java -Dexec.mainClass="rule_Engine_with_AST.Main"
    ```
 
+## How It Works
+- **AST Representation**: Each rule is represented as an abstract syntax tree (AST), where each node can be either an operator (AND, OR) or a condition (age > 30).
+- **Combining Rules**: Multiple rules can be combined using the RuleCombiner class, which joins the ASTs of individual rules using logical operators.
+- **Rule Evaluation**: Once a rule is parsed into an AST, the RuleEvaluator class recursively evaluates the AST against user-provided data.
+
+## Features
+1.Create and combine rules:
+  ```bash
+ASTNode rule1 = RuleParser.createRule(rule1String);
+ASTNode rule2 = RuleParser.createRule(rule2String);
+ASTNode combinedRule = RuleCombiner.combineRules(rule1, rule2, "AND");
+
+  ```
+2.Evaluate rules:
+  ```bash
+Map<String, Object> userData = new HashMap<>();
+userData.put("age", 35);
+userData.put("department", "Sales");
+userData.put("salary", 60000);
+userData.put("experience", 3);
+
+boolean isEligible = RuleEvaluator.evaluateRule(combinedRule, userData);
+System.out.println("User eligibility: " + isEligible);
+
+
+  ```
+## Running Tests
+To run the unit tests, execute the following command:
+```bash
+mvn test
+```
+
+## Future Improvements
+- Support for more complex rule expressions.
+- Rule modification and versioning capabilities.
+- Error handling for malformed rule strings
+- Support for user-defined functions within the rule language.
+
+
+
+
