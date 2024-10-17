@@ -46,6 +46,7 @@ AND (salary > 20000 OR experience > 5)
 - **Clone the Repository**:
   ```bash
   git clone https://github.com/bhaskarradha123/AST.git
+  cd ast
 
   ```
   
@@ -99,6 +100,7 @@ mvn test
 - Error handling for malformed rule strings
 - Support for user-defined functions within the rule language.
 
-
+## Contact
+For any inquiries or issues, please reach out to me at **mailmeasradha@gmail.com**
 
 
