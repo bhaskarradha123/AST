@@ -45,8 +45,8 @@ AND (salary > 20000 OR experience > 5)
  ## Installation and Setup
 - **Clone the Repository**:
   ```bash
-  git clone https://github.com/bhaskarradha123/rule-engine-ast.git
-  cd rule-engine-ast
+  git clone https://github.com/bhaskarradha123/AST.git
+
   ```
   
 - **Build the Project**: Ensure that you have Maven installed. Then, run the following command to build the project:
